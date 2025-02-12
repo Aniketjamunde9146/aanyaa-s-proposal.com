@@ -1,0 +1,45 @@
+body {
+	font-family: Arial, sans-serif;
+}
+
+#login-form {
+	width: 50%;
+	margin: 40px auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+#code {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+}
+
+#submit-btn {
+	background-color: black;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+    align-items: center;
+}
+
+#submit-btn:hover {
+	background-color:pink;
+    filter: drop-shadow(black);
+}
+
+#result {
+	color:black;
+	margin-top: 20px;
+}
+h1{
+text-align: center;
+text-decoration: underline;
+color: pink;
+}

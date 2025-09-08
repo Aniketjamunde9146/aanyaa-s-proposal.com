@@ -1,18 +1,21 @@
 const form = document.getElementById('login-form');
-const codeInput = document.getElementById('code');
-const submitBtn = document.getElementById('submit-btn');
+const nameInput = document.getElementById('name');
 const resultDiv = document.getElementById('result');
 
-const secretCode = 'baykoo'; // Replace with your secret code
-const nextPageUrl = 'main.html'; // Replace with the URL of the new page
-
 form.addEventListener('submit', (e) => {
-	e.preventDefault();
-	const userInput = codeInput.value.trim();
-	if (userInput === secretCode) {
-		resultDiv.innerHTML = 'Baby';
-		window.location.href = nextPageUrl; // Redirect to new page
-	} else {
-		resultDiv.innerHTML = 'Naa Tum meri baby nhi hoo kon hooo tum kaha hai meri baby';
-	}
+    e.preventDefault();
+    const userName = nameInput.value.trim();
+    if (userName) {
+        // Remove existing fade class to restart animation if needed
+        resultDiv.classList.remove('fade-in');
+
+        // Add new message
+        resultDiv.innerHTML = `Welcome beautiful girl ${userName} 💖`;
+
+        // Trigger fade-in animation
+        void resultDiv.offsetWidth; // reflow to restart animation
+        resultDiv.classList.add('fade-in');
+    } else {
+        resultDiv.innerHTML = 'Please enter your name!';
+    }
 });

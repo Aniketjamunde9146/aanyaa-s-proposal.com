@@ -7,19 +7,21 @@ form.addEventListener('submit', (e) => {
     const userName = nameInput.value.trim();
 
     if (userName) {
-        // Show welcome message
         resultDiv.classList.remove('fade-in');
-        resultDiv.textContent = `Welcome beautiful girl ${userName} 💖`;
+        resultDiv.innerHTML = `
+            Welcome beautiful girl ${userName} 💖<br>
+            <button id="continue-btn">Continue</button>
+        `;
         void resultDiv.offsetWidth; // restart animation
         resultDiv.classList.add('fade-in');
 
-        // Save username for main.html
         localStorage.setItem('userName', userName);
 
-        // Use window.location.assign() for more reliable redirect
-        setTimeout(() => {
-            window.location.assign('main.html');
-        }, 800); // 0.8 seconds so fade-in is visible
+        // Add click event for the Continue button
+        const continueBtn = document.getElementById('continue-btn');
+        continueBtn.addEventListener('click', () => {
+            window.location.href = 'main.html';
+        });
     } else {
         resultDiv.textContent = 'Please enter your name!';
     }

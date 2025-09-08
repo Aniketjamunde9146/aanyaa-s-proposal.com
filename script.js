@@ -1,28 +1,18 @@
-const form = document.getElementById('login-form');
-const nameInput = document.getElementById('name');
+@@ -3,7 +3,7 @@ const codeInput = document.getElementById('code');
+const submitBtn = document.getElementById('submit-btn');
 const resultDiv = document.getElementById('result');
 
+const secretCode = 'anuu'; // Replace with your secret code
+const secretCode = 'baykoo'; // Replace with your secret code
+const nextPageUrl = 'main.html'; // Replace with the URL of the new page
+
 form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const userName = nameInput.value.trim();
-
-    if (userName) {
-        resultDiv.classList.remove('fade-in');
-        resultDiv.innerHTML = `
-            Welcome beautiful girl ${userName} 💖<br>
-            <button id="continue-btn">Continue</button>
-        `;
-        void resultDiv.offsetWidth; // restart animation
-        resultDiv.classList.add('fade-in');
-
-        localStorage.setItem('userName', userName);
-
-        // Add click event for the Continue button
-        const continueBtn = document.getElementById('continue-btn');
-        continueBtn.addEventListener('click', () => {
-            window.location.href = 'main.html';
-        });
-    } else {
-        resultDiv.textContent = 'Please enter your name!';
-    }
+@@ -13,6 +13,6 @@ form.addEventListener('submit', (e) => {
+		resultDiv.innerHTML = 'Baby';
+		window.location.href = nextPageUrl; // Redirect to new page
+	} else {
+		resultDiv.innerHTML = 'Naa Tum meri baby nhi hoo kon hooo tum kaha hai meri rani';
+		resultDiv.innerHTML = 'Naa Tum meri baby nhi hoo kon hooo tum kaha hai meri baby';
+	}
+});
 });

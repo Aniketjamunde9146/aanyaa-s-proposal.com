@@ -7,20 +7,20 @@ form.addEventListener('submit', (e) => {
     const userName = nameInput.value.trim();
 
     if (userName) {
-        // Show quick fade-in welcome message
+        // Show welcome message
         resultDiv.classList.remove('fade-in');
-        resultDiv.innerHTML = `Welcome beautiful girl ${userName} 💖`;
+        resultDiv.textContent = `Welcome beautiful girl ${userName} 💖`;
         void resultDiv.offsetWidth; // restart animation
         resultDiv.classList.add('fade-in');
 
-        // Store name for main.html
+        // Save username for main.html
         localStorage.setItem('userName', userName);
 
-        // Redirect immediately after a short delay for fade effect
+        // Use window.location.assign() for more reliable redirect
         setTimeout(() => {
-            window.location.href = 'main.html';
-        }, 500); // 0.5 seconds fade before redirect
+            window.location.assign('main.html');
+        }, 800); // 0.8 seconds so fade-in is visible
     } else {
-        resultDiv.innerHTML = 'Please enter your name!';
+        resultDiv.textContent = 'Please enter your name!';
     }
 });

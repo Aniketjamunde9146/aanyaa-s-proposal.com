@@ -11,9 +11,10 @@ form.addEventListener('submit', (e) => {
         
         // Redirect after 2 seconds
         setTimeout(() => {
-            window.location.href = nextPageUrl;
+            window.location.href = main.html;
         }, 2000);
     } else {
         resultDiv.innerHTML = 'Please enter your name!';
     }
 });
+

@@ -1,18 +1,18 @@
 const form = document.getElementById('login-form');
 const codeInput = document.getElementById('code');
-const submitBtn = document.getElementById('submit-btn');
 const resultDiv = document.getElementById('result');
-
-const secretCode = 'anuu'; // Replace with your secret code
-const nextPageUrl = 'main.html'; // Replace with the URL of the new page
+const nextPageUrl = 'main.html'; // Change if you have another page
 
 form.addEventListener('submit', (e) => {
-	e.preventDefault();
-	const userInput = codeInput.value.trim();
-	if (userInput === secretCode) {
-		resultDiv.innerHTML = 'Baby';
-		window.location.href = nextPageUrl; // Redirect to new page
-	} else {
-		resultDiv.innerHTML = 'Naa Tum meri baby nhi hoo kon hooo tum kaha hai meri rani';
-	}
+  e.preventDefault();
+  const userInput = codeInput.value.trim();
+
+  if (userInput) {
+    resultDiv.innerHTML = `✨ Welcome, <strong>${userInput}</strong>! Redirecting...`;
+    setTimeout(() => {
+      window.location.href = nextPageUrl;
+    }, 2000); // Redirect after 2 seconds
+  } else {
+    resultDiv.innerHTML = '⚠️ Please enter your name!';
+  }
 });

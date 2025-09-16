@@ -1,19 +1,238 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Love</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
-	
-	<form id="login-form">
-		<label for="code">Enter Your Name:</label>
-		<input type="password" id="code" name="code">
-		<button id="submit-btn">Login</button>
-        <h3>your name is anuu</h3>
-	</form>
-	<div id="result"></div>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome for social icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
 
-	<script src="script.js"></script>
-</body>
+      body {
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100vh;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        padding: 20px;
+      }
+
+      .card {
+        background: #fff;
+        padding: 30px 35px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        animation: fadeIn 0.8s ease;
+      }
+
+      .card h2 {
+        margin-bottom: 10px;
+        color: #333;
+        font-size: 1.6rem;
+        font-weight: 600;
+      }
+
+      .subtitle {
+        margin-bottom: 25px;
+        font-size: 0.95rem;
+        color: #666;
+      }
+
+      label {
+        display: block;
+        text-align: left;
+        margin-bottom: 6px;
+        font-weight: 500;
+        color: #444;
+        font-size: 0.9rem;
+      }
+
+      input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 18px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        outline: none;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+      }
+
+      input:focus {
+        border-color: #ff758c;
+      }
+
+      button {
+        background: #ff758c;
+        color: #fff;
+        padding: 12px;
+        width: 100%;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background 0.3s;
+      }
+
+      button:hover {
+        background: #ff4f70;
+      }
+
+      #result {
+        margin-top: 15px;
+        font-size: 1rem;
+        color: #444;
+        font-weight: 500;
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.9);
+        border-top: 1px solid #ddd;
+      }
+
+      footer p {
+        margin-bottom: 8px;
+        font-weight: 500;
+        font-size: 0.9rem;
+        color: #444;
+      }
+
+      .social-icons a {
+        margin: 0 10px;
+        color: #333;
+        font-size: 22px;
+        transition: color 0.3s;
+      }
+
+      .social-icons a:hover {
+        color: #ff758c;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ✅ Responsive design */
+      @media (max-width: 480px) {
+        .card {
+          padding: 20px;
+          border-radius: 12px;
+        }
+
+        .card h2 {
+          font-size: 1.4rem;
+        }
+
+        .subtitle {
+          font-size: 0.85rem;
+        }
+
+        input,
+        button {
+          font-size: 0.95rem;
+          padding: 10px;
+        }
+
+        footer p {
+          font-size: 0.8rem;
+        }
+
+        .social-icons a {
+          font-size: 20px;
+          margin: 0 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form id="login-form" class="card">
+        <h2>Welcome Beautiful Qween 💖</h2>
+        <p class="subtitle">Enter your name to continue</p>
+
+        <label for="code">Your Name:</label>
+        <input
+          type="text"
+          id="code"
+          name="code"
+          placeholder="Type your name..."
+          required
+        />
+
+        <button id="submit-btn">Login</button>
+        <div id="result"></div>
+      </form>
+    </div>
+
+    <footer>
+      <p>Connect with us</p>
+      <div class="social-icons">
+        <!-- Instagram -->
+        <a href="https://instagram.com/aniket_jamunde_002" target="blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/919146293702" target="blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <!-- Snapchat -->
+        <a href="https://www.snapchat.com/add/model_anuu02" target="blank">
+          <i class="fab fa-snapchat"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script>
+      const form = document.getElementById("login-form");
+      const codeInput = document.getElementById("code");
+      const resultDiv = document.getElementById("result");
+      const nextPageUrl = "main.html"; // redirect page
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const userInput = codeInput.value.trim();
+
+        if (userInput) {
+          resultDiv.innerHTML = `✨ Welcome, <strong>${userInput}</strong>! Redirecting...`;
+          setTimeout(() => {
+            window.location.href = nextPageUrl;
+          }, 2000);
+        } else {
+          resultDiv.innerHTML = "⚠️ Please enter your name!";
+        }
+      });
+    </script>
+  </body>
 </html>
